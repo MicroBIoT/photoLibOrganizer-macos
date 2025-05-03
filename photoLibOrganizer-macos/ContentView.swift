@@ -14,6 +14,9 @@ struct ContentView: View {
                 Button("Scan and Insert") {
                     scanAndInsert()
                 }
+                Button("checksum") {
+                    fullpowerscotty()
+                }
             }
 
             Text("Logs:")
@@ -54,10 +57,17 @@ struct ContentView: View {
         logMessages.append("Found files: \(filePaths)")
 
         for filePath in filePaths {
-            databaseManager.insertFilePath(filePath: filePath)
-            logMessages.append("Inserted into database: \(filePath)")
+            //before inserting the filepath in the postgres database
+            //we validate the file is really a jpg image
+           // if isJPEGImage(filePath: filePath) {
+                databaseManager.insertFilePath(filePath: filePath)
+                logMessages.append("Inserted into database: \(filePath)")
+           // } else {
+           //     logMessages.append(filePath + " - That is NOT an image...skipping")
+           // }
         }
     }
+
 
     private func listAllFiles(in directory: URL, withExtension fileExtension: String) -> [String] {
         let fileManager = FileManager.default
