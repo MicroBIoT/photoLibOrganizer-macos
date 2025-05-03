@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BC9A4CD2DC2F5520027C30D /* NIOCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3BC9A4CC2DC2F5520027C30D /* NIOCore */; };
+		3BC9A4CF2DC2F5520027C30D /* NIOPosix in Frameworks */ = {isa = PBXBuildFile; productRef = 3BC9A4CE2DC2F5520027C30D /* NIOPosix */; };
 		3BD3D9C92DBE9FC2007D54B5 /* PostgresClientKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3BD3D9C82DBE9FC2007D54B5 /* PostgresClientKit */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BC9A4CD2DC2F5520027C30D /* NIOCore in Frameworks */,
+				3BC9A4CF2DC2F5520027C30D /* NIOPosix in Frameworks */,
 				3BD3D9C92DBE9FC2007D54B5 /* PostgresClientKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +122,8 @@
 			name = "photoLibOrganizer-macos";
 			packageProductDependencies = (
 				3BD3D9C82DBE9FC2007D54B5 /* PostgresClientKit */,
+				3BC9A4CC2DC2F5520027C30D /* NIOCore */,
+				3BC9A4CE2DC2F5520027C30D /* NIOPosix */,
 			);
 			productName = "photoLibOrganizer-macos";
 			productReference = 3BD3D99C2DBE9D96007D54B5 /* photoLibOrganizer-macos.app */;
@@ -203,6 +209,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				3BD3D9C72DBE9FC2007D54B5 /* XCRemoteSwiftPackageReference "PostgresClientKit" */,
+				3BC9A4CB2DC2F5520027C30D /* XCRemoteSwiftPackageReference "swift-nio" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3BD3D99D2DBE9D96007D54B5 /* Products */;
@@ -552,6 +559,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3BC9A4CB2DC2F5520027C30D /* XCRemoteSwiftPackageReference "swift-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-nio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.82.1;
+			};
+		};
 		3BD3D9C72DBE9FC2007D54B5 /* XCRemoteSwiftPackageReference "PostgresClientKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/codewinsdotcom/PostgresClientKit";
@@ -563,6 +578,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3BC9A4CC2DC2F5520027C30D /* NIOCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3BC9A4CB2DC2F5520027C30D /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOCore;
+		};
+		3BC9A4CE2DC2F5520027C30D /* NIOPosix */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3BC9A4CB2DC2F5520027C30D /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOPosix;
+		};
 		3BD3D9C82DBE9FC2007D54B5 /* PostgresClientKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3BD3D9C72DBE9FC2007D54B5 /* XCRemoteSwiftPackageReference "PostgresClientKit" */;
